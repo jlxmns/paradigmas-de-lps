@@ -2,9 +2,10 @@ from classes.animais import Cachorro, Gato, Animal
 from classes.carro import Carro, Motor
 from classes.contabancaria import ContaBancaria
 from classes.educacao import Escola, Professor
-from classes.empresarial import Empresa, Empregado
+from classes.empresarial import Empresa, Empregado, FuncionarioAssalariado, FuncionarioHorista
 from classes.imprimiveis import Relatorio, Contrato
 from classes.numeros import Calculadora
+from classes.produto import Produto
 
 
 def exercicio01():
@@ -120,3 +121,24 @@ def exercicio10():
     calc = Calculadora()
     print(calc.somar_dois(3, 5))
     print(calc.somar_tres(3, 5, 18))
+
+
+def exercicio11():
+    # Classes Abstratas: Crie uma classe abstrata Funcionario com um método abstrato
+    # calcularSalario. Derive classes como FuncionarioHorista e FuncionarioAssalariado que
+    # implementam calcularSalario de formas distintas
+    funcionario_assalariado = FuncionarioAssalariado("João", 3000)
+    funcionario_horista = FuncionarioHorista("Maria", 27, 20)
+    print(f"{funcionario_assalariado.nome}:", funcionario_assalariado.calcular_salario())
+    print(f"{funcionario_horista.nome}:", funcionario_horista.calcular_salario())
+
+
+def exercicio12():
+    # Sobrecarga de Operadores (Python) / Métodos de Conveniência (Java, Go) Em Python,
+    # sobrecarregue o operador + para somar dois objeto Produto baseados no preço. Em Java
+    # e Golang, crie métodos que permitam essa funcionalidade.
+
+    macarrao = Produto("Macarrão", 5.89)
+    molho_tomate = Produto("Molho de Tomate", 4.58)
+
+    print(macarrao + molho_tomate)

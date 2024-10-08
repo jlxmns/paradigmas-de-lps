@@ -125,4 +125,24 @@ public class Exercicios {
         System.out.println(calc.somar(3, 5));
         System.out.println(calc.somar(3, 5, 10));
     }
+
+    public static void exercicio11() {
+        /* Classes Abstratas Crie uma classe abstrata Funcionario com um método abstrato
+        calcularSalario. Derive classes como FuncionarioHorista e FuncionarioAssalariado que
+        implementam calcularSalario de formas distintas */
+        FuncionarioAssalariado assalariado = new FuncionarioAssalariado("João", 3000);
+        FuncionarioHorista horista = new FuncionarioHorista("Maria", 50, 50);
+        System.out.println(assalariado.getNome() + ": " + assalariado.calcularSalario());
+        System.out.println(horista.getNome() + ": " + horista.calcularSalario());
+    }
+
+    public static void exercicio12() {
+        /* Sobrecarga de Operadores (Python) / Métodos de Conveniência (Java, Go) Em Python,
+        sobrecarregue o operador + para somar dois objetos Produto baseados no preço. Em Java
+        e Golang, crie métodos que permitam essa funcionalidade. */
+        Produto macarrao = new Produto("Macarrão", 5.87f);
+        Produto molhoDeTomate = new Produto("Molho de Tomate", 4.32f);
+
+        System.out.println(macarrao.somarProdutos(molhoDeTomate));
+    }
 }

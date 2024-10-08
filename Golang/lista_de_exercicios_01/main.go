@@ -12,5 +12,7 @@ func main() {
 	//exercicios.Exercicio7()
 	//exercicios.Exercicio8()
 	//exercicios.Exercicio9()
-	exercicios.Exercicio10()
+	//exercicios.Exercicio10()
+	//exercicios.Exercicio11()
+	exercicios.Exercicio12()
 }

@@ -11,7 +11,9 @@ def main():
     # exercicios.exercicio07()
     # exercicios.exercicio08()
     # exercicios.exercicio09()
-    exercicios.exercicio10()
+    # exercicios.exercicio10()
+    # exercicios.exercicio11()
+    exercicios.exercicio12()
 
 
 if __name__ == '__main__':

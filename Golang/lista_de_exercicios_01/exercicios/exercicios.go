@@ -7,8 +7,10 @@ import (
 	"lista_de_exercicios_01/classes/contaBancaria"
 	"lista_de_exercicios_01/classes/educacao"
 	"lista_de_exercicios_01/classes/empresarial"
+	"lista_de_exercicios_01/classes/funcionario"
 	"lista_de_exercicios_01/classes/imprimiveis"
 	"lista_de_exercicios_01/classes/numeros"
+	"lista_de_exercicios_01/classes/produto"
 )
 
 func Exercicio1() {
@@ -124,4 +126,37 @@ func Exercicio10() {
 	calculadora := numeros.Calculadora{Num: 1}
 	fmt.Println(calculadora.SomarDois(1, 5))
 	fmt.Println(calculadora.SomarTres(1, 5, 30))
+}
+
+func Exercicio11() {
+	/* Classes Abstratas Crie uma classe abstrata Funcionario com um método abstrato
+	   calcularSalario. Derive classes como FuncionarioHorista e FuncionarioAssalariado que
+	   implementam calcularSalario de formas distintas */
+	horista := funcionario.Horista{
+		HorasTrabalhadas: 50,
+		ValorHora:        50,
+	}
+
+	assalariado := funcionario.Assalariado{
+		SalarioMensal: 3000,
+	}
+
+	fmt.Printf("Salário do funcionário horista: R$%.2f\n", horista.CalcularSalario())
+	fmt.Printf("Salário do funcionário assalariado: R$%.2f\n", assalariado.CalcularSalario())
+}
+
+func Exercicio12() {
+	/* Sobrecarga de Operadores (Python) / Métodos de Conveniência (Java, Go) Em Python,
+	   sobrecarregue o operador + para somar dois objetos Produto baseados no preço. Em Java
+	   e Golang, crie métodos que permitam essa funcionalidade. */
+	macarrao := produto.Produto{
+		Nome:  "Macarrão",
+		Preco: 5.87,
+	}
+	molhoDeTomate := produto.Produto{
+		Nome:  "Molho de Tomate",
+		Preco: 4.47,
+	}
+
+	fmt.Printf("Soma dos produtos: %.2f", macarrao.SomarProduto(molhoDeTomate))
 }
