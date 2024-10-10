@@ -2,6 +2,14 @@ package contaBancaria
 
 import "fmt"
 
+type SaldoInsuficienteException struct {
+	err string
+}
+
+func (e *SaldoInsuficienteException) Error() string {
+	return fmt.Sprintf("%s", e.err)
+}
+
 type contaBancaria struct {
 	valor   float64
 	titular string
@@ -23,5 +31,14 @@ func (cb contaBancaria) Sacar(valor float64) {
 	} else {
 		cb.valor -= valor
 		fmt.Printf("R$ %.2f sacado com sucesso.\n", valor)
+	}
+}
+
+func (cb contaBancaria) SacarComException(valor float64) (string, error) {
+	if cb.valor-valor < 0 {
+		return "", &SaldoInsuficienteException{err: "Saldo Insuficiente."}
+	} else {
+		cb.valor -= valor
+		return fmt.Sprintf("R$ %.2f sacado com sucesso.\n", valor), nil
 	}
 }

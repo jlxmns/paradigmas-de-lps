@@ -14,5 +14,8 @@ func main() {
 	//exercicios.Exercicio9()
 	//exercicios.Exercicio10()
 	//exercicios.Exercicio11()
-	exercicios.Exercicio12()
+	//exercicios.Exercicio12()
+	//exercicios.Exercicio13()
+	//exercicios.Exercicio14()
+	exercicios.Exercicio15()
 }

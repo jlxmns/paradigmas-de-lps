@@ -145,4 +145,33 @@ public class Exercicios {
 
         System.out.println(macarrao.somarProdutos(molhoDeTomate));
     }
+
+    public static void exercicio13() {
+        /* Métodos Estáticos Adicione um método estático à classe Matematica que calcula o
+        fatorial de um número. Em Python, utilize @staticmethod, em Java static, e em Golang crie
+        uma função regular na struct. */
+        System.out.println(Matematica.calcularFatorial(10));
+    }
+
+    public static void exercicio14() {
+        /* Singleton Implemente o padrão de projeto Singleton para garantir que apenas uma
+        instância de uma classe Configuracao seja criada. */
+        Singleton x = Singleton.getInstance();
+        Singleton y = Singleton.getInstance();
+        Singleton z = Singleton.getInstance();
+
+        System.out.println("Hashcode x: " + x.hashCode());
+        System.out.println("Hashcode y: " + y.hashCode());
+        System.out.println("Hashcode z: " + z.hashCode());
+    }
+
+    public static void exercicio15() throws SaldoInsuficienteException {
+        /* Exceções/Erros Personalizados Crie uma classe de exceção personalizada
+        SaldoInsuficienteException em Java e Python, ou error em Golang, que seja lançada
+        quando houver uma tentativa de saque superior ao saldo disponível na classe
+        ContaBancaria. */
+        ContaBancaria conta = new ContaBancaria(500, "Júlio");
+        conta.depositar(100);
+        conta.sacarComException(800);
+    }
 }

@@ -1,5 +1,7 @@
+import Classes.SaldoInsuficienteException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SaldoInsuficienteException {
 //        Exercicios.exercicio01();
 //        Exercicios.exercicio02();
 //        Exercicios.exercicio03();
@@ -11,7 +13,10 @@ public class Main {
 //        Exercicios.exercicio09();
 //        Exercicios.exercicio10();
 //        Exercicios.exercicio11();
-        Exercicios.exercicio12();
+//        Exercicios.exercicio12();
+//        Exercicios.exercicio13();
+//        Exercicios.exercicio14();
+        Exercicios.exercicio15();
 
     }
 }

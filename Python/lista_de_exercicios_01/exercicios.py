@@ -4,8 +4,9 @@ from classes.contabancaria import ContaBancaria
 from classes.educacao import Escola, Professor
 from classes.empresarial import Empresa, Empregado, FuncionarioAssalariado, FuncionarioHorista
 from classes.imprimiveis import Relatorio, Contrato
-from classes.numeros import Calculadora
+from classes.numeros import Calculadora, Matematica
 from classes.produto import Produto
+from classes.singleton import Singleton
 
 
 def exercicio01():
@@ -142,3 +143,34 @@ def exercicio12():
     molho_tomate = Produto("Molho de Tomate", 4.58)
 
     print(macarrao + molho_tomate)
+
+
+def exercicio13():
+    # Métodos Estáticos Adicione um método estático à classe Matematica que calcula o
+    # fatorial de um número. Em Python, utilize @staticmethod, em Java static, e em Golang crie
+    # uma função regular na struct.
+    print(Matematica.calcular_fatorial(10))
+
+
+def exercicio14():
+    # Singleton Implemente o padrão de projeto Singleton para garantir que apenas uma
+    # instância de uma classe Configuracao seja criada.
+    singleton = Singleton()
+    singleton2 = Singleton()
+
+    print(singleton is singleton2)
+
+    singleton.var = "Singleton Var"
+    print(singleton2.var)
+
+
+def exercicio15():
+    # Exceções/Erros Personalizados Crie uma classe de exceção personalizada
+    # SaldoInsuficienteException em Java e Python, ou error em Golang, que seja lançada
+    # quando houver uma tentativa de saque superior ao saldo disponível na classe
+    # ContaBancaria.
+    conta = ContaBancaria(500, "Júlio")
+    conta.depositar(100)
+    conta.sacar(800)
+    conta.sacar(300)
+

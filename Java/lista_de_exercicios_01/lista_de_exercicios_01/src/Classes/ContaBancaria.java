@@ -38,4 +38,13 @@ public class ContaBancaria {
             System.out.println("R$ " + valor + " sacado com sucesso.");
         }
     }
+
+    public void sacarComException(double valor) throws SaldoInsuficienteException {
+        if (getSaldo() - valor < 0) {
+            throw new SaldoInsuficienteException("Saldo insuficiente.");
+        } else {
+            setSaldo(getSaldo() - valor);
+            System.out.println("R$ " + valor + " sacado com sucesso.");
+        }
+    }
 }

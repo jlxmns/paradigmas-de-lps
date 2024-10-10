@@ -1,6 +1,7 @@
 package exercicios
 
 import (
+	"errors"
 	"fmt"
 	"lista_de_exercicios_01/classes/animal"
 	"lista_de_exercicios_01/classes/carro"
@@ -11,6 +12,7 @@ import (
 	"lista_de_exercicios_01/classes/imprimiveis"
 	"lista_de_exercicios_01/classes/numeros"
 	"lista_de_exercicios_01/classes/produto"
+	"lista_de_exercicios_01/classes/singleton"
 )
 
 func Exercicio1() {
@@ -159,4 +161,44 @@ func Exercicio12() {
 	}
 
 	fmt.Printf("Soma dos produtos: %.2f", macarrao.SomarProduto(molhoDeTomate))
+}
+
+func Exercicio13() {
+	/* Métodos Estáticos Adicione um método estático à classe Matematica que calcula o
+	   fatorial de um número. Em Python, utilize @staticmethod, em Java static, e em Golang crie
+	   uma função regular na struct. */
+	resultado := numeros.Matematica.CalcularFatorial(numeros.Matematica{}, 10)
+	fmt.Printf("%d", resultado)
+}
+
+func Exercicio14() {
+	/* Singleton Implemente o padrão de projeto Singleton para garantir que apenas uma
+	instância de uma classe Configuracao seja criada. */
+	for i := 0; i < 10; i++ {
+		go singleton.GetInstance()
+	}
+
+	// Scanln is similar to Scan, but stops scanning at a newline and
+	// after the final item there must be a newline or EOF.
+	fmt.Scanln()
+}
+
+func Exercicio15() {
+	/* Exceções/Erros Personalizados Crie uma classe de exceção personalizada
+	   SaldoInsuficienteException em Java e Python, ou error em Golang, que seja lançada
+	   quando houver uma tentativa de saque superior ao saldo disponível na classe
+	   ContaBancaria. */
+	conta := contaBancaria.New(500, "Júlio")
+	conta.Depositar(100)
+	sacar, err := conta.SacarComException(800)
+	if err != nil {
+		var saldoInsuficienteException *contaBancaria.SaldoInsuficienteException
+		if errors.As(err, &saldoInsuficienteException) {
+			fmt.Println(err.Error())
+			return
+		}
+		fmt.Println(err.Error())
+		return
+	}
+	fmt.Println(sacar)
 }
